@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О вирусах</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+         body {
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            line-height: 2;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #f4f4f4;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .virus-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .virus-table thead tr {
+            background-color: #3498db;
+            color: #ffffff;
+            text-align: left;
+        }
+        
+        .virus-table th,
+        .virus-table td {
+            padding: 12px 15px;
+            border: 1px solid #dddddd;
+        }
+        
+        .virus-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        
+        .virus-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        
+        .virus-table tbody tr:last-of-type {
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .virus-table tbody tr:hover {
+            background-color: #e3f2fd;
+            cursor: pointer;
+        }
+        
+        .danger-level {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .low { background-color: #4CAF50; }
+        .medium { background-color: #FFC107; color: black; }
+        .high { background-color: #FF9800; }
+        .critical { background-color: #F44336; }
+        
+        .prevention {
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        .example {
+            font-style: italic;
+            color: #2c3e50;
+        }
+
+        .diagram-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        
+        .pie-chart {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #ff5252 0% 35%,   
+                #ff9800 35% 60%,  
+                #4caf50 60% 80%,  
+                #2196f3 80% 95%,  
+                #9c27b0 95% 100%  
+            );
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .chart-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 15px;
+        }
+        
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            margin-right: 8px;
+            border-radius: 3px;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>О компьютерных вирусах</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О вирусах</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Что такое компьютерные вирусы?</h2>
+            <p>Компьютерные вирусы — это вредоносные программы, которые могут повредить данные, замедлить работу компьютера или украсть личную информацию.</p>
+            <h3>История вирусов</h3>
+            <ul>
+                <li>1949: Теоретические основы (Джон фон Нейман)</li>
+                <li>1982: Первый вирус для ПК (Elk Cloner)</li>
+                <li>2020-е: Ransomware-атаки на предприятия</li>
+                <li>CIH («Чернобыль») (1999). Вирус уничтожал файлы на жёстких дисках пользователей и повреждал предустановленную систему BIOS. Пострадало примерно полмиллиона ПК по всему миру.</li>
+                <li>ILOVEYOU (2000). Вирус проникал в компьютеры пользователей по всему миру через электронную почту. За время активности ILOVEYOU поразил 3 миллиона компьютеров</li>
+                <li>MyDoom (2004). Вирус блокировал работу всех известных антивирусов, блокировал сайты производителей антивирусного ПО, открывал хакерам доступ к заражённому компьютеру. Эпидемия MyDoom признана самой крупной вирусной атакой в компьютерной истории.</li>
+                <li>WannaCry (2017). Вирус атаковал компьютеры с Windows, шифровал все файлы и требовал выкуп в биткоинах. За время эпидемии WannaCry поразил более 520 тысяч компьютеров</li>
+            </ul>
+            <h2>Классификация угроз</h2>
+
+
+
+
+                                                <!--Диграмма!-->
+
+
+
+
+    <div class="diagram-container">
+        <div class="chart-title">Типы вредоносного ПО</div>
+        <div class="pie-chart" id="pieChart"></div>
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #ff5252;"></div>
+                <span>Вирусы (35%)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #ff9800;"></div>
+                <span>Черви (25%)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #4caf50;"></div>
+                <span>Трояны (20%)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #2196f3;"></div>
+                <span>Шпионское ПО (15%)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #9c27b0;"></div>
+                <span>Рекламное ПО (5%)</span>
+            </div>
+        </div>
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chart = document.getElementById('pieChart');
+            const tooltip = document.getElementById('tooltip');
+            
+
+            const data = [
+                { label: 'Вирусы', value: 35, color: '#ff5252' },
+                { label: 'Черви', value: 25, color: '#ff9800' },
+                { label: 'Трояны', value: 20, color: '#4caf50' },
+                { label: 'Шпионское ПО', value: 15, color: '#2196f3' },
+                { label: 'Рекламное ПО', value: 5, color: '#9c27b0' }
+            ];
+            
+
+            chart.addEventListener('mousemove', function(e) {
+                const rect = chart.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+
+                const angle = Math.atan2(y - centerY, x - centerX) * 180 / Math.PI;
+                const normalizedAngle = (angle + 450) % 360; 
+                
+                let cumulativePercent = 0;
+                let currentSector = null;
+                
+                for (const item of data) {
+                    const sectorPercent = item.value / 100 * 360;
+                    if (normalizedAngle >= cumulativePercent && 
+                        normalizedAngle < cumulativePercent + sectorPercent) {
+                        currentSector = item;
+                        break;
+                    }
+                    cumulativePercent += sectorPercent;
+                }
+                
+                if (currentSector) {
+                    tooltip.textContent = `${currentSector.label}: ${currentSector.value}%`;
+                    tooltip.style.opacity = '1';
+                    tooltip.style.left = (e.pageX + 10) + 'px';
+                    tooltip.style.top = (e.pageY + 10) + 'px';
+                }
+            });
+            
+            chart.addEventListener('mouseout', function() {
+                tooltip.style.opacity = '0';
+            });
+        });
+    </script>
+
+
+
+
+
+
+                                            <!--Таблица!-->
+
+
+
+
+
+
+        <h1>Классификация компьютерных вирусов</h1>
+    
+    <table class="virus-table">
+        <thead>
+            <tr>
+                <th>Тип вируса</th>
+                <th>Способ распространения</th>
+                <th>Уровень опасности</th>
+                <th>Основные признаки</th>
+                <th>Известные примеры</th>
+                <th>Методы защиты</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Файловые вирусы</strong></td>
+                <td>Заражают исполняемые файлы (.exe, .com)</td>
+                <td><span class="danger-level high">Высокий</span></td>
+                <td>Увеличение размера файлов, ошибки при запуске программ</td>
+                <td class="example">Jerusalem, CIH (Чернобыль), Sality</td>
+                <td class="prevention">Проверка файлов антивирусом перед запуском, ограничение прав пользователей</td>
+            </tr>
+            <tr>
+                <td><strong>Макровирусы</strong></td>
+                <td>Документы Office (.doc, .xls), скрипты</td>
+                <td><span class="danger-level medium">Средний</span></td>
+                <td>Повреждение документов, странные макросы</td>
+                <td class="example">Melissa, LoveLetter, Nimda</td>
+                <td class="prevention">Отключение макросов, обновление Office</td>
+            </tr>
+            <tr>
+                <td><strong>Сетевые черви</strong></td>
+                <td>Уязвимости в сетевых службах, электронная почта</td>
+                <td><span class="danger-level critical">Критический</span></td>
+                <td>Высокая сетевая активность, замедление работы сети</td>
+                <td class="example">WannaCry, Blaster, Conficker, Mydoom</td>
+                <td class="prevention">Своевременное обновление ОС, файрволлы</td>
+            </tr>
+            <tr>
+                <td><strong>Троянские программы</strong></td>
+                <td>Маскируются под полезное ПО, социальная инженерия</td>
+                <td><span class="danger-level critical">Критический</span></td>
+                <td>Скрытые процессы, неожиданные сетевые соединения</td>
+                <td class="example">Zeus, Emotet, Back Orifice</td>
+                <td class="prevention">Загрузка ПО только с официальных сайтов, UAC</td>
+            </tr>
+            <tr>
+                <td><strong>Руткиты</strong></td>
+                <td>Эксплуатация привилегий, уязвимости ядра</td>
+                <td><span class="danger-level critical">Критический</span></td>
+                <td>Скрытие процессов, модификация системных файлов</td>
+                <td class="example">Stuxnet, ZeroAccess, TDSS</td>
+                <td class="prevention">Загрузка с доверенных носителей, проверка целостности системы</td>
+            </tr>
+            <tr>
+                <td><strong>Рекламное ПО (Adware)</strong></td>
+                <td>В составе бесплатных программ, фишинговые ссылки</td>
+                <td><span class="danger-level low">Низкий</span></td>
+                <td>Всплывающая реклама, изменение стартовой страницы</td>
+                <td class="example">Superfish, Fireball, Gator</td>
+                <td class="prevention">Внимательное чтение лицензий, AdBlock</td>
+            </tr>
+            <tr>
+                <td><strong>Шпионское ПО (Spyware)</strong></td>
+                <td>Уязвимости браузеров, трояны</td>
+                <td><span class="danger-level high">Высокий</span></td>
+                <td>Необъяснимая активность, перехват данных</td>
+                <td class="example">FinFisher, DarkComet, Pegasus</td>
+                <td class="prevention">Антишпионские программы, VPN</td>
+            </tr>
+            <tr>
+                <td><strong>Рансомеры (Ransomware)</strong></td>
+                <td>Фишинг, эксплойт-киты, удалённый доступ</td>
+                <td><span class="danger-level critical">Критический</span></td>
+                <td>Шифрование файлов, требования выкупа</td>
+                <td class="example">WannaCry, Petya, Locky, REvil</td>
+                <td class="prevention">Резервное копирование, ограничение прав</td>
+            </tr>
+            <tr>
+                <td><strong>Банковские трояны</strong></td>
+                <td>Фишинговые письма, заражённые сайты</td>
+                <td><span class="danger-level critical">Критический</span></td>
+                <td>Перехват банковских данных, модификация страниц</td>
+                <td class="example">Zeus, Carberp, TrickBot</td>
+                <td class="prevention">Двухфакторная аутентификация, защищённые соединения</td>
+            </tr>
+            <tr>
+                <td><strong>Ботнеты</strong></td>
+                <td>Черви, трояны, уязвимости</td>
+                <td><span class="danger-level high">Высокий</span></td>
+                <td>Фоновые соединения, высокая нагрузка на систему</td>
+                <td class="example">Mirai, Storm, ZeroAccess</td>
+                <td class="prevention">Мониторинг сетевой активности, IDS/IPS</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="additional-info">
+        <h3>Дополнительная информация:</h3>
+        <ul>
+            <li><strong>Уровень опасности</strong> оценивается по потенциальному ущербу и скорости распространения</li>
+            <li>Современные вирусы часто сочетают несколько техник (например, черви с функциями троянов)</li>
+            <li>Ежедневно появляется около 350,000 новых вредоносных программ (данные AV-TEST)</li>
+        </ul>
+    </div>        
+    <div class="virus-card" onclick="showDetails('trojan')">
+    <h3>Троянские программы</h3>
+    <p>Маскируются под полезное ПО → <a href="https://www.securitylab.ru/analytics/545053.php" target="_blank"> Узнать больше </a></p>
+    </div>
+
+    <h3> Методы защиты. Антивирусные программы</h3>
+
+    <ul>
+        <li><a href="https://freesoft.ru/windows/avast" target="_blank"> Avast Free </a></li>
+        <li><a href="https://www.avg.com/" target="_blank"> AVG AntiVirus </a></li>
+        <li><a href="https://www.kaspersky.ru/downloads/free-antivirus" target="_blank"> Kaspersky Free </a></li>
+        <li><a href="https://www.microsoft.com/en-us/microsoft-365/microsoft-defender-for-individuals" target="_blank"> Windows Defender </a></li>
+    </ul>
+
+    <h3> Практические советы</h3>
+    <ul>
+        <li>1. 🔄 Регулярно обновляйте ОС и ПО</li>
+        <li>2. 💾 Делайте бэкапы (правило 3-2-1)</li>
+        <li>3. 🚫 Не открывайте подозрительные вложения</li>
+        <li>4. 🔍 Проверяйте файлы на VirusTotal.com</li>
+        <li>5. 🛡️ Используйте двухфакторную аутентификацию</li>
+    </ul>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Проект сделанный с любовью. Все права защищены.</p>
+    </footer>
+</body>
+</html>
