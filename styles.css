@@ -1,7 +1,7 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Times New Roman";
     color: #333;
-    font-size: 20px;
+    font-size: 14px;
     background-color: #f4f4f4;
     background-repeat: no-repeat;
     background-size: 2000px
@@ -14,7 +14,7 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 3px 0;
     text-align: center;
 }
 
@@ -80,12 +80,15 @@ form button:hover {
 section {
     color: #333;
 }
-
 .bigger {
-  font-size: 30px;
-  line-height: 70px;
+  font-size: 20px;
+  line-height: 50px;
 }
 
 .text_style {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Times New Roman";
+}
+.div-horizontal-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
 }

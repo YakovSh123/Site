@@ -21,16 +21,20 @@
     <main>
         <section>
             <h2>Свяжитесь с нами</h2>
-            <form action="#" method="post">
+            <form action="https://formspree.io/f/mzzrobwy" method="POST" id="contact-form">
                 <label for="name">Имя:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required 
+                       pattern="[A-Za-zА-Яа-яЁё\s]{2,}" 
+                       title="Только буквы (минимум 2 символа)">
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
 
                 <label for="message">Сообщение:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea id="message" name="message" rows="5" required
+                          minlength="10" maxlength="500"></textarea>
 
+                <div id="form-status"></div>
                 <button type="submit">Отправить</button>
             </form>
         </section>
@@ -39,5 +43,44 @@
     <footer>
         <p>&copy; 2025 Проект сделанный с любовью. Все права защищены.</p>
     </footer>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formStatus.innerHTML = '✅ Сообщение успешно отправлено!';
+                    form.reset();
+                } else {
+                    formStatus.innerHTML = '⚠️ Ошибка отправки. Попробуйте ещё раз.';
+                }
+            } catch (error) {
+                formStatus.innerHTML = '⚠️ Ошибка сети. Проверьте соединение.';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Отправить';
+                
+                setTimeout(() => {
+                    formStatus.innerHTML = '';
+                }, 5000);
+            }
+        });
+    </script>
 </body>
 </html>
